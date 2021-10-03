@@ -12,7 +12,7 @@ function Routes() {
             <Drawer.Screen 
                 name="Home"
                 component={Home} 
-            />
+            /> 
             
             <Drawer.Screen 
                 name="Movies"
