@@ -8,7 +8,11 @@ const Drawer = createDrawerNavigator();
 
 function Routes() {
     return ( 
-        <Drawer.Navigator>
+        <Drawer.Navigator
+            screenOptions={{
+                headerShown: false
+            }}
+        >
             <Drawer.Screen 
                 name="HomeDrawer"
                 component={StackRoutes} 
