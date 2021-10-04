@@ -31,7 +31,7 @@ function Routes() {
                 name="Movies"
                 component={Movies} 
                 options={{
-                    title: 'Home'
+                    title: 'Home', 
                 }}
             />  
         </Drawer.Navigator>    
