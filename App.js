@@ -7,6 +7,7 @@ import Routes from './src/routes';
 function App() {
   return (
     <NavigationContainer>
+      <StatusBar hidden={true} />
       <Routes />
     </NavigationContainer>
   );
