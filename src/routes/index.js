@@ -30,6 +30,9 @@ function Routes() {
             <Drawer.Screen 
                 name="Movies"
                 component={Movies} 
+                options={{
+                    title: 'Home'
+                }}
             />  
         </Drawer.Navigator>    
     )
