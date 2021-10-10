@@ -8,7 +8,7 @@ import Header from '../../components/Header';
 function Home() {
     return (
         <Container>
-            <Header />
+            <Header title="React Prime"/>
             <Text>HOME</Text>
         </Container>
     );
