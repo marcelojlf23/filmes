@@ -15,7 +15,7 @@ export const SearchContainer = styled.View`
     margin-bottom: 8px;
 `
 export const Input = styled.TextInput`
-    background-color: rgba(255,255,255, 0.4);
+    background-color: rgba(255,255,255, 0.4); 
     width:85%;
     height:50px;
     border-radius:50px;
