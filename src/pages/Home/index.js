@@ -86,7 +86,7 @@ function Home() {
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
                     data={nowMovies}
-                    renderItem={({item}) => <SliderItem />}
+                    renderItem={({item}) => <SliderItem data={item} />}
                 />
 
                 <Title>Populares</Title>
@@ -94,8 +94,8 @@ function Home() {
                 <SliderMovie
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
-                    data={[1,2,3,4]}
-                    renderItem={({item}) => <SliderItem />}
+                    data={popularMovies}
+                    renderItem={({item}) => <SliderItem data={item}/>}
                 />
                 
                 <Title>Os mais Votados</Title>
@@ -103,8 +103,8 @@ function Home() {
                 <SliderMovie
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
-                    data={[1,2,3,4]}
-                    renderItem={({item}) => <SliderItem />}
+                    data={topMovies}
+                    renderItem={({item}) => <SliderItem data={item}/>}
                 />
             </ScrollView>
         </Container>
