@@ -9,6 +9,8 @@ import SliderItem from '../../components/SliderItem';
 
 import api, {key} from '../../services/api'
 
+import {getListMoviews } from '../../utils/movie';
+
 function Home() {
 
     const [nowMovies, setNowMovies] = useState([]);
@@ -43,9 +45,17 @@ function Home() {
                 }),
             ])
             
-            setNowMovies(nowData.data.results);
+            const nowList = getListMoviews(10, nowData.data.results);
+            const popularList = getListMoviews(5, popularData.data.results);
+            const topList = getListMoviews(5, topData.data.results)
+       
+            setNowMovies(nowList);
+            setPopularMovies(popularList);
+            setTopMovies(topList);
         }
-    })
+
+        getMovies();
+    },[])
 
     return (
         <Container>
@@ -75,7 +85,7 @@ function Home() {
                 <SliderMovie
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
-                    data={[1,2,3,4]}
+                    data={nowMovies}
                     renderItem={({item}) => <SliderItem />}
                 />
 
