@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text, View } from 'react-native';
 
 import {Container, BannerItem, Title,RateContainer,Rate} from './styles';
 import {Ionicons} from '@expo/vector-icons';
