@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { ScrollView } from 'react-native';
 
 import { Container, SearchContainer, SliderMovie, SearchButton, Input, Title, BannerButton, Banner } from './styles';
@@ -8,6 +8,9 @@ import Header from '../../components/Header';
 import SliderItem from '../../components/SliderItem';
 
 function Home() {
+
+    const [nowMovies,setNowMovies] = useState([]);
+
     return (
         <Container>
             <Header title="React Prime"/>
