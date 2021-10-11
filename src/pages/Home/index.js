@@ -1,7 +1,7 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { ScrollView } from 'react-native';
 
-import { Container, SearchContainer, SearchButton, Input } from './styles';
+import { Container, SearchContainer, SearchButton, Input, Title, BannerButton, Banner } from './styles';
 import { Feather } from '@expo/vector-icons';
 
 import Header from '../../components/Header';
@@ -20,7 +20,16 @@ function Home() {
                     <Feather name="search" size={30} color="#FFF"/>
                 </SearchButton>
             </SearchContainer>
-            <Text>HOME</Text>
+
+            <ScrollView>
+                <Title>Em Cartaz</Title>
+
+                <BannerButton>
+                    <Banner
+                        source={{ uri: "https://images.unsplash.com/photo-1602461601079-fb03b7b35e61?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80"}}
+                    />
+                </BannerButton>
+            </ScrollView>
         </Container>
     );
 }
