@@ -87,6 +87,7 @@ function Home() {
                     showsHorizontalScrollIndicator={false}
                     data={nowMovies}
                     renderItem={({item}) => <SliderItem data={item} />}
+                    keyExtractor={ (item) => String(item.id)}
                 />
 
                 <Title>Populares</Title>
@@ -96,6 +97,7 @@ function Home() {
                     showsHorizontalScrollIndicator={false}
                     data={popularMovies}
                     renderItem={({item}) => <SliderItem data={item}/>}
+                    keyExtractor={ (item) => String(item.id)}
                 />
                 
                 <Title>Os mais Votados</Title>
@@ -105,6 +107,7 @@ function Home() {
                     showsHorizontalScrollIndicator={false}
                     data={topMovies}
                     renderItem={({item}) => <SliderItem data={item}/>}
+                    keyExtractor={ (item) => String(item.id)}
                 />
             </ScrollView>
         </Container>
