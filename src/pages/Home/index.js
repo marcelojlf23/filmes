@@ -7,9 +7,45 @@ import { Feather } from '@expo/vector-icons';
 import Header from '../../components/Header';
 import SliderItem from '../../components/SliderItem';
 
+import api, {key} from '../../services/api'
+
 function Home() {
 
-    const [nowMovies,setNowMovies] = useState([]);
+    const [nowMovies, setNowMovies] = useState([]);
+    const [popularMovies, setPopularMovies] = useState([]);
+    const [topMovies, setTopMovies] = useState([]);
+
+    useEffect(() =>{
+        let isActive = true;
+
+        async function getMovies() {
+            const [nowData, popularData, topData] = await Promise.all([
+                api.get('/movie/now_playing', {
+                    params: {
+                        api_key: key,
+                        language: 'pt-BR',
+                        page: 1
+                    }
+                }),
+                api.get('/movie/popular', {
+                    params: {
+                        api_key: key,
+                        language: 'pt-BR',
+                        page: 1
+                    }
+                }),
+                api.get('/movie/top_rated', {
+                    params: {
+                        api_key: key,
+                        language: 'pt-BR',
+                        page: 1
+                    }
+                }),
+            ])
+            
+            setNowMovies(nowData.data.results);
+        }
+    })
 
     return (
         <Container>
