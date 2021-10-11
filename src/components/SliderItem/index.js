@@ -11,7 +11,7 @@ function SliderItem({data}) {
                 source={{uri: `https://image.tmdb.org/t/p/original/${data.poster_path}`}}
             />
             
-            <Title>{data.title}</Title>
+            <Title numberOfLines={1}>{data.title}</Title>
 
             <RateContainer>
                 <Ionicons name="md-start" size={12} color="#e7a74e" />
