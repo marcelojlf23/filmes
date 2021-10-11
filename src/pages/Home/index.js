@@ -22,7 +22,7 @@ function Home() {
                 </SearchButton>
             </SearchContainer>
 
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <Title>Em Cartaz</Title>
 
                 <BannerButton 
