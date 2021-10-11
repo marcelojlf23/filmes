@@ -9,7 +9,7 @@ import SliderItem from '../../components/SliderItem';
 
 import api, {key} from '../../services/api'
 
-import {getListMoviews } from '../../utils/movie';
+import {getListMovies } from '../../utils/movie';
 
 function Home() {
 
@@ -45,9 +45,9 @@ function Home() {
                 }),
             ])
             
-            const nowList = getListMoviews(10, nowData.data.results);
-            const popularList = getListMoviews(5, popularData.data.results);
-            const topList = getListMoviews(5, topData.data.results)
+            const nowList = getListMovies(10, nowData.data.results);
+            const popularList = getListMovies(5, popularData.data.results);
+            const topList = getListMovies(5, topData.data.results)
        
             setNowMovies(nowList);
             setPopularMovies(popularList);

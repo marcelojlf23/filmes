@@ -1,7 +1,7 @@
-export function getListMoviews(size, movies) {
+export function getListMovies(size, movies) {
     let popularMovies = [];
 
-    for (let i = 0, l = size; i < length; i++) {
+    for (let i = 0, l = size; i < l; i++) {
         popularMovies.push(movies[i])
     }
 
