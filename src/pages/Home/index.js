@@ -5,7 +5,7 @@ import { Container, SearchContainer, SliderMovie, SearchButton, Input, Title, Ba
 import { Feather } from '@expo/vector-icons';
 
 import Header from '../../components/Header';
-import { SliderItem } from '../../components/SliderItem';
+import SliderItem from '../../components/SliderItem';
 
 function Home() {
     return (
@@ -36,7 +36,7 @@ function Home() {
                 <SliderMovie
                     horizontal={true}
                     data={[1,2,3,4]}
-                    renderItem={ ({item: userData}) => <SliderItem />}
+                    renderItem={({item}) => <SliderItem />}
                 />
                     
             </ScrollView>

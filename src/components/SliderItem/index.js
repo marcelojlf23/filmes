@@ -1,6 +1,8 @@
 import React from 'react';
+import { Text, View } from 'react-native';
+
 import {Container, BannerItem, Title,RateContainer,Rate} from './styles';
-// import {Ionicons} from '@expo/vector-icons';
+import {Ionicons} from '@expo/vector-icons';
 
 function SliderItem() {
     return (
@@ -12,7 +14,7 @@ function SliderItem() {
             <Title>Vingadores</Title>
 
             <RateContainer>
-                {/* <Ionicons name="md-start" size={12} color="#e7a74e" /> */}
+                <Ionicons name="md-start" size={12} color="#e7a74e" />
                 <Rate>9/10</Rate>
             </RateContainer>
         </Container>
