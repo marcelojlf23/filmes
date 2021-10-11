@@ -100,7 +100,7 @@ function Home() {
                     keyExtractor={ (item) => String(item.id)}
                 />
                 
-                <Title>Os mais Votados</Title>
+                <Title>Os mais Votados</Title> 
                     
                 <SliderMovie
                     horizontal={true}
