@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { ScrollView } from 'react-native';
+import { ActivityIndicator, ScrollView } from 'react-native';
 
 import { Container, SearchContainer, SliderMovie, SearchButton, Input, Title, BannerButton, Banner } from './styles';
 import { Feather } from '@expo/vector-icons';
@@ -16,6 +16,8 @@ function Home() {
     const [nowMovies, setNowMovies] = useState([]);
     const [popularMovies, setPopularMovies] = useState([]);
     const [topMovies, setTopMovies] = useState([]);
+    
+    const [loading, setLoading] = useState(true);
 
     useEffect(() =>{
         let isActive = true;
@@ -52,11 +54,22 @@ function Home() {
             setNowMovies(nowList);
             setPopularMovies(popularList);
             setTopMovies(topList);
+
+            setLoading(false);
         }
 
         getMovies();
     },[])
 
+
+    if (loading) {
+        return (
+            <Container>
+                <ActivityIndicator size="large" color="#fff"></ActivityIndicator>
+            </Container>
+        )
+    }
+    
     return (
         <Container>
             <Header title="React Prime"/>
