@@ -58,7 +58,7 @@ function Home() {
 
                 setNowMovies(nowList);
                 setPopularMovies(popularList);
-                setTopMovies(topList);
+                setTopMovies(topList); 
     
                 setLoading(false);
             }
