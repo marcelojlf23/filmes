@@ -21,6 +21,7 @@ function Home() {
 
     useEffect(() =>{
         let isActive = true;
+        const ac = new AbortController();
 
         async function getMovies() {
             const [nowData, popularData, topData] = await Promise.all([
@@ -50,15 +51,22 @@ function Home() {
             const nowList = getListMovies(10, nowData.data.results);
             const popularList = getListMovies(5, popularData.data.results);
             const topList = getListMovies(5, topData.data.results)
-       
-            setNowMovies(nowList);
-            setPopularMovies(popularList);
-            setTopMovies(topList);
 
-            setLoading(false);
+            if (isActive) {
+                setNowMovies(nowList);
+                setPopularMovies(popularList);
+                setTopMovies(topList);
+    
+                setLoading(false);
+            }
         }
 
         getMovies();
+
+        return () => {
+            isActive = false;
+            ac.abort();
+        }
     },[])
 
 
