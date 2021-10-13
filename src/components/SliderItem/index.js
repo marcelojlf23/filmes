@@ -3,10 +3,10 @@ import React from 'react';
 import {Container, BannerItem, Title,RateContainer,Rate} from './styles';
 import {Ionicons} from '@expo/vector-icons';
 
-function SliderItem({data}) {
+function SliderItem({data, navigatePage }) {
     debugger;
     return (
-        <Container activeOpacity={0.7}>
+        <Container activeOpacity={0.7} onPress={() => navigatePage(data)}>
             <BannerItem
                 source={{uri: `https://image.tmdb.org/t/p/original/${data.poster_path}`}}
             />

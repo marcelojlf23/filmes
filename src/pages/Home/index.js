@@ -113,7 +113,7 @@ function Home() {
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
                     data={nowMovies}
-                    renderItem={({item}) => <SliderItem data={item} />}
+                    renderItem={({item}) => <SliderItem data={item} navigatePage={ () => navigateDetailsPage(item)} />}
                     keyExtractor={ (item) => String(item.id)}
                 />
 
@@ -123,7 +123,7 @@ function Home() {
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
                     data={popularMovies}
-                    renderItem={({item}) => <SliderItem data={item}/>}
+                    renderItem={({item}) => <SliderItem data={item} navigatePage={ () => navigateDetailsPage(item)}/>}
                     keyExtractor={ (item) => String(item.id)}
                 />
                 
@@ -133,7 +133,7 @@ function Home() {
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
                     data={topMovies}
-                    renderItem={({item}) => <SliderItem data={item}/>}
+                    renderItem={({item}) => <SliderItem data={item} navigatePage={ () => navigateDetailsPage(item)}/>}
                     keyExtractor={ (item) => String(item.id)}
                 />
             </ScrollView>
