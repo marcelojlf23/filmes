@@ -24,4 +24,9 @@ export const HeaderButton = styled.TouchableOpacity`
     align-items: center;
 `;
 
-export const Banner = styled.Image``;
+export const Banner = styled.Image`
+    width: 100%;
+    height: 350px;
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+`;

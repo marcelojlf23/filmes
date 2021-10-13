@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { 
     Container,
@@ -10,12 +10,46 @@ import {
 import { Feather, Ionicons } from '@expo/vector-icons';
 
 import { useNavigation, useRoute } from '@react-navigation/native';
+import api, { key } from '../../services/api';
 
 function Detail() {
+    const navigation = useNavigation();
+    const route = useRoute();
+
+    const [movie, setMovie] = useState({});
+
+    useEffect(() => {
+        let isActive = true;
+
+        async function getMovie() {
+            const response = await api.get(`/movie/${route.params?.id}`, {
+                params: {
+                    api_key: key,
+                    language: 'pt-BR'
+                }
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+
+            if (isActive) {
+                setMovie(response.data);
+            }
+        }
+
+        if (isActive) {
+            getMovie();
+        }
+
+        return () => {
+            isActive = false;
+        };
+    }, []);
+
     return (
         <Container>
             <Header>
-                <HeaderButton>
+                <HeaderButton activeOpacity={0.7} onPress={() => navigation.goBack()}>
                     <Feather
                         name="arrow-left"
                         size={28}
@@ -30,6 +64,10 @@ function Detail() {
                     />
                 </HeaderButton>
             </Header>
+            <Banner 
+                resizeMethod="resize"
+                source={{uri: `https://image.tmdb.org/t/p/original/${movie.poster_path}`}}
+            />
         </Container>
     )
 }
