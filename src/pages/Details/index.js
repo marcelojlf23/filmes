@@ -4,7 +4,9 @@ import {
     Container,
     Header,
     HeaderButton,
-    Banner
+    Banner,
+    ButtonLink,
+    Title
 } from './styles';
 
 import { Feather, Ionicons } from '@expo/vector-icons';
@@ -68,6 +70,14 @@ function Detail() {
                 resizeMethod="resize"
                 source={{uri: `https://image.tmdb.org/t/p/original/${movie.poster_path}`}}
             />
+
+            <ButtonLink>
+                <Feather name="link" size={24} color="#fff" />
+            </ButtonLink>
+
+            <Title numberOfLines={2}>{movie.title}</Title>
+
+
         </Container>
     )
 }
