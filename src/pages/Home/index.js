@@ -11,6 +11,8 @@ import api, {key} from '../../services/api'
 
 import {getListMovies, randomBanner } from '../../utils/movie';
 
+import { useNavigation } from '@react-navigation/native'
+
 function Home() {
 
     const [nowMovies, setNowMovies] = useState([]);
@@ -19,6 +21,8 @@ function Home() {
     const [bannerMovie, setBannerMovie] = useState([]);
     
     const [loading, setLoading] = useState(true);
+    
+    const navigation = useNavigation();
 
     useEffect(() =>{
         let isActive = true;
@@ -73,7 +77,7 @@ function Home() {
     },[])
 
     function navigateDetailsPage(item) {
-        console.log(item.id);
+        navigation.navigate('Details', { id: item.id });
     }
 
     if (loading) {
