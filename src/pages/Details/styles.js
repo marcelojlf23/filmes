@@ -63,5 +63,5 @@ export const Rate = styled.Text`
     font-size: 18px;
     font-weight: bold;
     color: #fff;
-`;
+`; 
 
