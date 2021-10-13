@@ -72,6 +72,9 @@ function Home() {
         }
     },[])
 
+    function navigateDetailsPage(item) {
+        console.log(item.id);
+    }
 
     if (loading) {
         return (
@@ -99,7 +102,7 @@ function Home() {
                 <Title>Em Cartaz</Title>
 
                 <BannerButton 
-                    activeOpacity={0.9} onPress={()=>alert('teste')}>
+                    activeOpacity={0.9} onPress={() => navigateDetailsPage()}>
                     <Banner
                         resizeMethod="resize"
                         source={{ uri: `https://image.tmdb.org/t/p/original/${bannerMovie.poster_path}`}}
