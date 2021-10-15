@@ -1,9 +1,10 @@
-import styled from "styled-components";
+import styled from "styled-components/native";
 
 export const Container = styled.View`
     flex: 1;
     background-color: #191a30;
 `;
+
 export const Header = styled.View`
     z-index: 99;
     position: absolute;
@@ -63,5 +64,12 @@ export const Rate = styled.Text`
     font-size: 18px;
     font-weight: bold;
     color: #fff;
+`; 
+
+export const ListGenres = styled.FlatList`
+    padding-left: 14px;
+    margin: 8px 0;
+    max-height: 35px;
+    min-height: 35px;
 `; 
 

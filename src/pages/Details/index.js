@@ -8,7 +8,8 @@ import {
     ButtonLink,
     Title,
     ContentArea,
-    Rate
+    Rate,
+    ListGenres
 } from './styles';
 
 import { Feather, Ionicons } from '@expo/vector-icons';
@@ -17,6 +18,8 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import api, { key } from '../../services/api';
 
 import Stars from 'react-native-stars';
+
+import Genres from '../../components/Genres';
 
 function Detail() {
     const navigation = useNavigation();
@@ -94,6 +97,14 @@ function Detail() {
                 /> 
                 <Rate>{movie.vote_average}/10</Rate>
             </ContentArea>
+
+            <ListGenres 
+                data={movie?.genres}
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                keyExtractor={ (item) => String(item.id) }
+                renderItem={({item}) => <Genres data={item} />}
+            />
 
         </Container>
     )
