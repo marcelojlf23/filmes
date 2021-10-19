@@ -82,7 +82,7 @@ function Home() {
     }
     
     function handleSearchMovie(input) {
-        console.log(input);
+        navigation.navigate('Search');
     }
 
 

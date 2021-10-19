@@ -59,8 +59,6 @@ function Detail() {
         };
     }, []);
 
-    debugger;
-    console.log(movie);
     return (
         <Container>
             <Header>
