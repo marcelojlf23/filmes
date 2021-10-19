@@ -7,6 +7,6 @@ function Search() {
             <Name>TESTE PROCURANDO</Name>
         </Container>
     );
-}
+} 
 
 export default Search;
