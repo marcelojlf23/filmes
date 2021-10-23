@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import { Container, Name } from './styles';
+import { Container, ListMovies } from './styles';
+
+import SearchItem from '../../components/SearchItem';
 
 import api, {key} from '../../services/api';
 
@@ -48,7 +50,12 @@ function Search() {
     
     return(
         <Container>
-            <Name>TESTE PROCURANDO</Name>
+            <ListMovies
+                data={movie}
+                showsVerticalScrollIndicator={false}
+                keyExtractor={item => String(item.id)}
+                renderItem={({item}) => <SearchItem data={item}/>}
+            />
         </Container>
     );
 } 
