@@ -10,6 +10,18 @@ function Search() {
     const [movie, setMovie] = useState([]);
     const [loading, setLoading] = useState(true);
     
+    useEffect(() => {
+        let isActive = true;
+
+        async function getSearchMovie(){
+
+        }
+
+        if (isActive) {
+            getSearchMovie();
+        }
+    });
+
     if (loading) {  
         return(
             <Container></Container>
