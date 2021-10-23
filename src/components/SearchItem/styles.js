@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 export const Container = styled.TouchableOpacity`
-    padding: 14px;
+    padding: 14px; 
 `;
 
 export const Banner = styled.Image`
