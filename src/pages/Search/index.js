@@ -20,6 +20,10 @@ function Search() {
         if (isActive) {
             getSearchMovie();
         }
+
+        return () => {
+            isActive = false;
+        }
     });
 
     if (loading) {  
