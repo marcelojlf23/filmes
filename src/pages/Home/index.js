@@ -82,12 +82,10 @@ function Home() {
     }
     
     function handleSearchMovie() {
-        if (input  === '') {
-            alert('Preencha algum nome');
-            return;
-        }
+        if (input  === '') return;
 
-        navigation.navigate('Search');
+        navigation.navigate('Search', { name: input });
+        setInput('');
     }
 
 

@@ -1,7 +1,15 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Container, Name } from './styles';
 
+import { useNavigation, useRoute } from '@react-navigation/native';
+
 function Search() {
+    const navigation = useNavigation();
+    const route = useRoute();
+
+    const [movie, setMovie] = useState([]);
+    const [loading, setLoading] = useState(true);
+    
     return(
         <Container>
             <Name>TESTE PROCURANDO</Name>
