@@ -24,7 +24,7 @@ function StackRoutes() {
                 name="Details"
                 component={Detail}
                 options={{
-                    headerShown: false
+                    headerShown: false,
                 }}
             />
 
@@ -33,6 +33,10 @@ function StackRoutes() {
                 component={Search}
                 options={{
                     title: "Sua busca",
+                    headerTintColor: '#fff',
+                    headerStyle: { 
+                        backgroundColor: '#141a29' 
+                    },   
                 }}
             />
         </Stack.Navigator>    
