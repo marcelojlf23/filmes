@@ -4,7 +4,6 @@ import {Container, BannerItem, Title,RateContainer,Rate} from './styles';
 import {Ionicons} from '@expo/vector-icons';
 
 function SliderItem({data, navigatePage }) {
-    debugger;
     return (
         <Container activeOpacity={0.7} onPress={() => navigatePage(data)}>
             <BannerItem

@@ -36,7 +36,7 @@ function Home() {
                         api_key: key,
                         language: 'pt-BR',
                         page: 1
-                    }
+                    } 
                 }),
                 api.get('/movie/popular', {
                     params: {
@@ -81,7 +81,12 @@ function Home() {
         navigation.navigate('Details', { id: item.id });
     }
     
-    function handleSearchMovie(input) {
+    function handleSearchMovie() {
+        if (input  === '') {
+            alert('Preencha algum nome');
+            return;
+        }
+
         navigation.navigate('Search');
     }
 
