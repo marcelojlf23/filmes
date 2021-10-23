@@ -10,6 +10,12 @@ function Search() {
     const [movie, setMovie] = useState([]);
     const [loading, setLoading] = useState(true);
     
+    if (loading) {  
+        return(
+            <Container></Container>
+        )
+    }
+    
     return(
         <Container>
             <Name>TESTE PROCURANDO</Name>
