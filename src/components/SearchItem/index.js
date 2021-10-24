@@ -3,9 +3,14 @@ import {Container, Banner, Title, RateContainer, Rate} from './styles';
 
 import { Ionicons } from '@expo/vector-icons';
 
-function SearchItem({data}) {
+function SearchItem({data, navigatePage}) {
+
+  function detailMovie() {
+    navigatePage(data);
+  }
+
   return (
-    <Container activeOpacity={0.7}>
+    <Container activeOpacity={0.7} onPress={detailMovie}>
         { data?.poster_path ? (
           <Banner
             resizeMethod="resize"
