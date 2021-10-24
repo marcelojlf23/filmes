@@ -10,3 +10,22 @@ export const Banner = styled.Image`
     height: 140px;
     border-radius: 8px;
 `;
+
+export const Title = styled.Text`
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 8px;
+`;
+
+export const RateContainer = styled.View`
+    flex-direction: row;
+    align-items: center;
+    padding-top: 4px;
+`;
+
+export const Rate = styled.Text`
+    padding-left: 4px;
+    color: #fff;
+    font-size: 12px;
+`;
