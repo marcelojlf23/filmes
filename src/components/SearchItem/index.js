@@ -6,6 +6,11 @@ import { Ionicons } from '@expo/vector-icons';
 function SearchItem({data, navigatePage}) {
 
   function detailMovie() {
+    if (data.release_date === '') { 
+      alert('Filme ainda sem data');
+      return;
+    }
+    
     navigatePage(data);
   }
 
