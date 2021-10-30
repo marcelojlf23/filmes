@@ -24,6 +24,8 @@ import Stars from 'react-native-stars';
 import Genres from '../../components/Genres';
 import ModalLink from '../../components/ModalLink';
 
+import {saveMovie} from '../../utils/storage';
+
 function Detail() {
     const navigation = useNavigation();
     const route = useRoute();
@@ -59,6 +61,11 @@ function Detail() {
         };
     }, []);
 
+    async function favoriteMovie(movie) {
+        await saveMovie('@primereact',movie);
+        alert('Filme salvo na sua lista.');
+    }
+
     return (
         <Container>
             <Header>
@@ -69,9 +76,9 @@ function Detail() {
                         color="#fff"
                     />
                 </HeaderButton>
-                <HeaderButton>
+                <HeaderButton onPress={ ()=> favoriteMovie(movie) }>
                     <Ionicons 
-                        name="bookmark"
+                        name="bookmark-outline"
                         size={28}
                         color="#fff"
                     />
