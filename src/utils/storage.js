@@ -21,9 +21,9 @@ export async function saveMovie(key, newMovie) {
         return;
     }
 
-    movieStored.push(newMovie);
+    moviesStored.push(newMovie);
 
-    await AsyncStorage.setItem(key, JSON.stringify(movieStored)); 
+    await AsyncStorage.setItem(key, JSON.stringify(moviesStored)); 
 }
 
 

@@ -13,7 +13,7 @@ function SliderItem({data, navigatePage }) {
             <Title numberOfLines={1}>{data.title}</Title>
 
             <RateContainer>
-                <Ionicons name="md-start" size={12} color="#e7a74e" />
+                <Ionicons name="md-star" size={12} color="#e7a74e" />
                 <Rate>?{data.vote_average}/10</Rate>
             </RateContainer>
         </Container>
