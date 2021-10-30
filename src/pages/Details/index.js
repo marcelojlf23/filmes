@@ -24,7 +24,7 @@ import Stars from 'react-native-stars';
 import Genres from '../../components/Genres';
 import ModalLink from '../../components/ModalLink';
 
-import {saveMovie, hasMovie} from '../../utils/storage';
+import {saveMovie, hasMovie, deleteMovie} from '../../utils/storage';
 
 function Detail() {
     const navigation = useNavigation();
@@ -66,8 +66,16 @@ function Detail() {
     }, []);
 
     async function favoriteMovie(movie) {
-        await saveMovie('@primereact',movie);
-        alert('Filme salvo na sua lista.');
+
+        if (favoritedMovie) {
+            await deleteMovie(movie.id);
+            setFavoritedMovie(false);
+            alert('Filme removido dos favoritos');
+        } else {
+            await saveMovie('@primereact',movie);
+            setFavoritedMovie(true);
+            alert('Filme salvo na sua lista.');
+        }
     }
 
     return (
