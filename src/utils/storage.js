@@ -9,3 +9,25 @@ export async function getMoviesSave(key) {
 
     return moviesSave;
 }
+
+// Salvor um novo filme
+export async function saveMovie(key, newMovie) {
+    let moviesStored = await getMoviesSave(key);
+
+    // se tiver algum filme salvo com esse mesmo id / ou duplicado ignorar
+    const hasMovie = moviesStored.some(movie => movie.id === newMovie.id);
+
+    if (hasMovie) {
+        return;
+    }
+
+    movieStored.push(newMovie);
+
+    await AsyncStorage.setItem(key, JSON.stringify(movieStored)); 
+}
+
+
+
+// Remover um filme específico
+
+// filtrar algum filme se ja esta salvo
