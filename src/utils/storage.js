@@ -28,6 +28,16 @@ export async function saveMovie(key, newMovie) {
 
 
 
-// Remover um filme específico
+// Deletar um filme específico
+
+export async function deleteMovie(id) {
+    let moviesStored = await getMoviesSave('@primereact');
+    
+    let myMovies  = moviesStored.filter(movie => movie.id !== id);
+
+    await AsyncStorage.setItem('@primereact', JSON.stringify(myMovies));
+    
+    return myMovies;
+}
 
 // filtrar algum filme se ja esta salvo
