@@ -40,4 +40,10 @@ export async function deleteMovie(id) {
     return myMovies;
 }
 
-// filtrar algum filme se ja esta salvo
+// verifica se existe um filme salvo
+
+export async function hasMovie(id) {
+    let moviesStored = await getMoviesSave('@primereact');
+    
+    return moviesStored.find(movie => movie.id === id);
+}
