@@ -7,9 +7,10 @@ import { getMoviesSave, deleteMovie } from '../../utils/storage';
 import { useEffect } from 'react/cjs/react.development';
 
 import FavoriteItem from '../../components/FavoriteItem';
+import { useNavigation } from '@react-navigation/native';
 
 function Movies(){
-
+    const navigation = useNavigation();
     const [movies, setMovies] = useState([]);
     
     useEffect(() => {
@@ -39,7 +40,9 @@ function Movies(){
         setMovies(result);
     }
 
-    function
+    function navigateToDetail(id){
+        navigation.navigate('Detail', {id});
+    }
 
     return ( 
         <Container>
@@ -53,6 +56,7 @@ function Movies(){
                     <FavoriteItem
                         data={item}
                         deleteMovie={handleDelete}
+                        navigatePage={()=>navigateToDetail(item.id)}
                     />
                 )}
             />
