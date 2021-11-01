@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Container, ListMovies } from './styles';
 import Header from '../../components/Header';
 
-import { getMoviesSave } from '../../utils/storage';
+import { getMoviesSave, deleteMovie } from '../../utils/storage';
 import { useEffect } from 'react/cjs/react.development';
 
 import FavoriteItem from '../../components/FavoriteItem';
@@ -34,6 +34,13 @@ function Movies(){
 
     }, []);
 
+    async function handleDelete(id) {
+        const result = await deleteMovie(id);
+        setMovies(result);
+    }
+
+    function
+
     return ( 
         <Container>
             <Header title="Meus filmes" />
@@ -45,6 +52,7 @@ function Movies(){
                 renderItem={({ item }) => (
                     <FavoriteItem
                         data={item}
+                        deleteMovie={handleDelete}
                     />
                 )}
             />
