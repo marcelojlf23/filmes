@@ -3,7 +3,7 @@ import { Ionicons, Feather } from "@expo/vector-icons"
 
 import { Container,RateContainer,Title,Rate,ActionContainer,DetailButton,DeleteButton} from './styles'
 
-function FavoriteItem(data) {
+function FavoriteItem({data, deleteMovie, navigatePage}) {
   return (
     <Container>
       <Title size={22}>{data.title}</Title>
@@ -14,11 +14,11 @@ function FavoriteItem(data) {
       </RateContainer>
 
       <ActionContainer>
-        <DetailButton>
+        <DetailButton onPress={()=>navigatePage(data)}>
             <Title size={14}>Ver Detalhes</Title>
         </DetailButton>
 
-        <DeleteButton>
+        <DeleteButton onPress={()=>deleteMovie(data.id)}>
             <Feather name="trash" size={24} color="#fff"/>
         </DeleteButton>
       </ActionContainer>

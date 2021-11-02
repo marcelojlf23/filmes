@@ -40,8 +40,8 @@ function Movies(){
         setMovies(result);
     }
 
-    function navigateToDetail(id){
-        navigation.navigate('Detail', {id});
+    function navigateDetailsPage(item){
+        navigation.navigate('Details', {id: item.id});
     }
 
     return ( 
@@ -56,7 +56,7 @@ function Movies(){
                     <FavoriteItem
                         data={item}
                         deleteMovie={handleDelete}
-                        navigatePage={()=>navigateToDetail(item.id)}
+                        navigatePage={()=>navigateDetailsPage(item)}
                     />
                 )}
             />
