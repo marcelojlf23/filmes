@@ -7,12 +7,13 @@ import { getMoviesSave, deleteMovie } from '../../utils/storage';
 import { useEffect } from 'react/cjs/react.development';
 
 import FavoriteItem from '../../components/FavoriteItem';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useIsFocused } from '@react-navigation/native';
 
 function Movies(){
     const navigation = useNavigation();
     const [movies, setMovies] = useState([]);
-    
+    const isFocused = useIsFocused();
+
     useEffect(() => {
         
         let isActive = true;
@@ -33,7 +34,7 @@ function Movies(){
             isActive = false;
         }
 
-    }, []);
+    }, [isFocused]);
 
     async function handleDelete(id) {
         const result = await deleteMovie(id);
